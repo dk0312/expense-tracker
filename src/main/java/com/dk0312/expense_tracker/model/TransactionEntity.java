@@ -7,6 +7,7 @@ import java.util.Date;
 
 @Entity
 @Data
+@Table(name = "transactions")
 public class TransactionEntity {
 
     @Id
@@ -19,5 +20,5 @@ public class TransactionEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private UserEntity userEntity;
+    private UserEntity user;
 }
