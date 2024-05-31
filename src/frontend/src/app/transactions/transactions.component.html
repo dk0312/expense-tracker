@@ -1,0 +1,25 @@
+<div>
+    <h2>Transactions</h2>
+    <ul>
+      <li *ngFor="let transaction of transactions">
+        {{ transaction.type }}: {{ transaction.amount }} - {{ transaction.description }} on {{ transaction.date }}
+      </li>
+    </ul>
+  
+    <h3>Add New Transaction</h3>
+    <form (ngSubmit)="createTransaction()">
+      <label for="type">Type:</label>
+      <input id="type" [(ngModel)]="newTransaction.type" name="type" required>
+  
+      <label for="amount">Amount:</label>
+      <input id="amount" [(ngModel)]="newTransaction.amount" name="amount" required>
+  
+      <label for="description">Description:</label>
+      <input id="description" [(ngModel)]="newTransaction.description" name="description">
+  
+      <label for="date">Date:</label>
+      <input id="date" type="date" [(ngModel)]="newTransaction.date" name="date" required>
+  
+      <button type="submit">Add Transaction</button>
+    </form>
+  </div>
